@@ -27,6 +27,9 @@ ProcessarContas: Método na classe Banco que processa operações específicas p
 
 3. Uso na Classe Program:
 Cria uma instância do Banco.
+
 Instancia contas corrente e poupança.
+
 Realiza operações como depósitos, saques e aplicações de taxas/juros.
+
 Exibe informações sobre as contas no banco.
