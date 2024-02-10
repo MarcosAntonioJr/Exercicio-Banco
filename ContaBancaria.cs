@@ -1,12 +1,12 @@
 namespace ExBanco;
 
-public class ContaBancaria
+public abstract class ContaBancaria
 {
     public int NumConta { get; set; }
     public string Titular { get; set; }
     public double Saldo { get; set; }
 
-    public ContaBancaria(int numeroConta, string titular)
+    protected ContaBancaria(int numeroConta, string titular)
     {
         NumConta = numeroConta;
         Titular = titular;
@@ -23,25 +23,6 @@ public class ContaBancaria
         {
             Console.WriteLine("O valor do depósito deve ser maior que zero.");
         }
-
     }
-    public virtual void Sacar(double valor)
-    {
-        if(valor > 0)
-        {
-            if(Saldo >= valor)
-            {
-                Saldo -= valor;
-                Console.WriteLine($"Saque de {valor} realizado. Novo saldo: {Saldo}");
-            }
-            else
-            {
-                System.Console.WriteLine("Saldo insuficiente.");
-            }
-        }
-        else
-        {
-            System.Console.WriteLine("O valor do saque deve ser maior que zero.");
-        }
-    }
+    public abstract void Sacar(double valor);
 } 

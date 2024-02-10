@@ -19,7 +19,7 @@ namespace ExBanco
             contaPoupanca.Sacar(50);
 
             banco.ProcessarContas();
-            banco.ListaContas();
+            banco.ListarContas();
         }
     }
 }

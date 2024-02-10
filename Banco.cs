@@ -9,7 +9,7 @@ public class Banco
         contas.Add(conta);
         Console.WriteLine($"Conta adicionada com sucesso: {conta.Titular}, Número {conta.NumConta}");
     }
-    public void ListaContas()
+    public void ListarContas()
     {
         Console.WriteLine("Lista de contas no banco: ");
         foreach(var conta in contas)
@@ -21,13 +21,13 @@ public class Banco
     {
         foreach(var conta in contas)
         {
-            if(conta is ContaCorrente)
+            if(conta is ContaCorrente contaCorrente)
             {
-                ((ContaCorrente)conta).DeductTax();
+                contaCorrente.DeductTax();
             }
-            else if(conta is ContaPoupanca)
+            else if(conta is ContaPoupanca contaPoupanca)
             {
-                ((ContaPoupanca)conta).AplicarJuros();
+                contaPoupanca.AplicarJuros();
             }
         }
     }
